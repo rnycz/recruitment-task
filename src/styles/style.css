@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #e3e3e3;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: #646464;
+  border-bottom: 4px solid black;
+}
+.navbar .navbar-links {
+  display: flex;
+  flex-flow: row wrap;
+}
+.navbar .navbar-links a {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  gap: 5px;
+  transition: 0.3s all;
+}
+.navbar .navbar-links a:hover {
+  box-shadow: 0px 4px 0px 0px #646464;
+  background-color: #e3e3e3;
+  color: black;
+}
+.navbar .navbar-links a .link-icon {
+  font-size: 20px;
+  display: flex;
+}
+.navbar .navbar-links a .link-name::first-letter {
+  text-transform: uppercase;
+}
+.navbar .navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .navbar-buttons .add-button {
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  padding: 10px 20px;
+  transition: all 250ms;
+}
+.navbar .navbar-buttons .add-button:hover, .navbar .navbar-buttons .add-button:focus {
+  background-color: rgb(3, 168, 3);
+}
+.navbar .navbar-buttons .add-button:hover {
+  transform: translateY(-2px);
+}
+.navbar .navbar-buttons .add-button:active {
+  background-color: rgb(2, 105, 2);
+  transform: translateY(0);
+}
+.navbar .link-active {
+  box-shadow: 0px 4px 0px 0px green !important;
+}
+
+.info-box {
+  background-color: #646464;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 15px auto;
+  color: white;
+}
+
+.users-table {
+  box-shadow: 0 0 5px #646464;
+  border-collapse: collapse;
+  margin: 30px auto;
+  padding: 0;
+  width: 95%;
+  table-layout: auto;
+}
+.users-table caption {
+  font-size: 23px;
+  margin: 10px;
+}
+.users-table tr {
+  background-color: #f5f5f5;
+  padding: 0.35em;
+}
+.users-table th,
+.users-table td {
+  padding: 10px;
+  text-align: center;
+}
+.users-table tbody tr {
+  border: 1px solid #dddddd;
+}
+.users-table tbody tr:hover {
+  background-color: #cecece;
+}
+.users-table th {
+  font-size: 16px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  background-color: #cecece;
+}
+
+@media screen and (max-width: 850px) {
+  .users-table thead {
+    display: none;
+  }
+  .users-table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .users-table td {
+    border-bottom: 1px solid #dddddd;
+    display: block;
+    font-size: 16px;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+  .users-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-right: 15px;
+  }
+  .users-table td:last-child {
+    border-bottom: 0px;
+  }
+}
+.posts-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 10px;
+}
+.posts-container .post-box {
+  width: 500px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #cecece;
+  border-radius: 5px;
+  padding: 10px;
+}
+.posts-container .post-box .post-title {
+  padding: 8px;
+  border: 3px solid;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+}
+.posts-container .post-box .post-title span {
+  position: relative;
+  z-index: 1;
+}
+.posts-container .post-box .post-title::before, .posts-container .post-box .post-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #cecece;
+}
+.posts-container .post-box .post-title::before {
+  top: -4px;
+  bottom: -4px;
+  left: 15px;
+  right: 15px;
+}
+.posts-container .post-box .post-title::after {
+  left: -4px;
+  right: -4px;
+  top: 15px;
+  bottom: 15px;
+}
+.posts-container .post-body {
+  text-align: justify;
+  margin-top: 15px;
+}
+.posts-container .post-comments h3 {
+  margin-bottom: 0;
+}
+.posts-container .post-comments .comment {
+  background-color: #a8a8a8;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.posts-container .post-comments .comment:last-child {
+  margin-bottom: 0;
+}
+.posts-container .post-comments .comment .comment-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.posts-container .post-comments .comment .comment-wrapper .comment-icon {
+  display: flex;
+  font-size: 40px;
+}
+.posts-container .post-comments .comment .comment-wrapper .comment-user .comment-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.posts-container .post-comments .comment .comment-wrapper .comment-user .comment-email {
+  font-size: 12px;
+}
+.posts-container .post-comments .comment .comment-body {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.todos-container {
+  width: 100%;
+  height: 100vh;
+}
+.todos-container .todo-list::-webkit-scrollbar {
+  width: 8px;
+}
+.todos-container .todo-list::-webkit-scrollbar-track {
+  background-color: #888;
+}
+.todos-container .todo-list::-webkit-scrollbar-thumb {
+  background-color: #646464;
+}
+.todos-container .todo-list::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
+.todos-container .todo-list div {
+  display: flex;
+  justify-content: center;
+}
+.todos-container .todo-list div .single-todo {
+  display: flex;
+  width: 50% !important;
+  left: auto !important;
+  height: auto !important;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #646464;
+  margin: 20px 5px 5px 5px;
+  padding: 10px;
+}
+.todos-container .todo-list div .single-todo .todo-title {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+.todos-container .todo-list div .single-todo .todo-due {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+.todos-container .todo-list div .single-todo .todo-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+.todos-container .todo-list div .single-todo .todo-icons {
+  font-size: 18px;
+}
+.todos-container .todo-list .completed {
+  background-color: lightgreen;
+}
+.todos-container .todo-list .pending {
+  background-color: lightskyblue;
+}
+
+@media screen and (max-width: 850px) {
+  .todos-container .todo-list div .single-todo {
+    width: 75% !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .todos-container .todo-list div .single-todo {
+    width: 90% !important;
+    padding: 0;
+  }
+}
+.user-modal,
+.post-modal {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-modal .close-modal,
+.post-modal .close-modal {
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s all;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-modal .close-modal:hover,
+.post-modal .close-modal:hover {
+  color: #646464;
+}
+.user-modal .user-input,
+.user-modal .post-input,
+.post-modal .user-input,
+.post-modal .post-input {
+  display: flex;
+  flex-direction: column;
+  background-color: #a8a8a8;
+  padding: 20px;
+  border-radius: 10px;
+}
+.user-modal .user-input h2,
+.user-modal .post-input h2,
+.post-modal .user-input h2,
+.post-modal .post-input h2 {
+  margin: 0 0 10px 0;
+}
+.user-modal .user-input input[type=text],
+.user-modal .user-input input[type=password],
+.user-modal .user-input input[type=number],
+.user-modal .post-input input[type=text],
+.user-modal .post-input input[type=password],
+.user-modal .post-input input[type=number],
+.post-modal .user-input input[type=text],
+.post-modal .user-input input[type=password],
+.post-modal .user-input input[type=number],
+.post-modal .post-input input[type=text],
+.post-modal .post-input input[type=password],
+.post-modal .post-input input[type=number] {
+  padding: 15px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f5f5f5;
+}
+.user-modal .user-input input[type=text]:focus,
+.user-modal .user-input input[type=password]:focus,
+.user-modal .user-input input[type=number]:focus,
+.user-modal .post-input input[type=text]:focus,
+.user-modal .post-input input[type=password]:focus,
+.user-modal .post-input input[type=number]:focus,
+.post-modal .user-input input[type=text]:focus,
+.post-modal .user-input input[type=password]:focus,
+.post-modal .user-input input[type=number]:focus,
+.post-modal .post-input input[type=text]:focus,
+.post-modal .post-input input[type=password]:focus,
+.post-modal .post-input input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.user-modal .user-input .selector,
+.user-modal .post-input .selector,
+.post-modal .user-input .selector,
+.post-modal .post-input .selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.user-modal .user-input .selector label,
+.user-modal .post-input .selector label,
+.post-modal .user-input .selector label,
+.post-modal .post-input .selector label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.user-modal .user-input .selector input[type=radio],
+.user-modal .post-input .selector input[type=radio],
+.post-modal .user-input .selector input[type=radio],
+.post-modal .post-input .selector input[type=radio] {
+  display: none;
+}
+.user-modal .user-input .selector input[type=radio]:checked + label,
+.user-modal .post-input .selector input[type=radio]:checked + label,
+.post-modal .user-input .selector input[type=radio]:checked + label,
+.post-modal .post-input .selector input[type=radio]:checked + label {
+  color: #495057;
+  background-color: #ced4da;
+  border: 2px solid #495057;
+}
+.user-modal .user-input .selector input[type=radio] + label,
+.user-modal .post-input .selector input[type=radio] + label,
+.post-modal .user-input .selector input[type=radio] + label,
+.post-modal .post-input .selector input[type=radio] + label {
+  z-index: 1;
+  margin: 5px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: #babec2;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  background-color: white;
+  border: 2px solid #babec2;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.user-modal .user-input .add-button,
+.user-modal .post-input .add-button,
+.post-modal .user-input .add-button,
+.post-modal .post-input .add-button {
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  padding: 10px 20px;
+  margin-top: 15px;
+  transition: all 250ms;
+}
+.user-modal .user-input .add-button:hover, .user-modal .user-input .add-button:focus,
+.user-modal .post-input .add-button:hover,
+.user-modal .post-input .add-button:focus,
+.post-modal .user-input .add-button:hover,
+.post-modal .user-input .add-button:focus,
+.post-modal .post-input .add-button:hover,
+.post-modal .post-input .add-button:focus {
+  background-color: rgb(3, 168, 3);
+}
+.user-modal .user-input .add-button:hover,
+.user-modal .post-input .add-button:hover,
+.post-modal .user-input .add-button:hover,
+.post-modal .post-input .add-button:hover {
+  transform: translateY(-2px);
+}
+.user-modal .user-input .add-button:active,
+.user-modal .post-input .add-button:active,
+.post-modal .user-input .add-button:active,
+.post-modal .post-input .add-button:active {
+  background-color: rgb(2, 105, 2);
+  transform: translateY(0);
+}/*# sourceMappingURL=style.css.map */
