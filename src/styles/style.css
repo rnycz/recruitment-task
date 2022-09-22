@@ -5,6 +5,10 @@ body {
   background-color: #e3e3e3;
 }
 
+.welcome-box {
+  text-align: center;
+}
+
 .navbar {
   display: flex;
   flex-flow: row wrap;
@@ -37,6 +41,54 @@ body {
 }
 .navbar .navbar-links a .link-name::first-letter {
   text-transform: uppercase;
+}
+.navbar .mobile-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 5px;
+  color: white;
+}
+.navbar .mobile-menu .mobile-menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s color;
+}
+.navbar .mobile-menu .mobile-menu-icon:hover {
+  color: #cbcbcb;
+}
+.navbar .mobile-menu h3 {
+  margin: 0;
+  font-style: italic;
+}
+.navbar .mobile-menu .mobile-menu-wrapper {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #646464;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 4px solid black;
+}
+.navbar .mobile-menu .mobile-menu-wrapper .buttons-mobile {
+  flex-direction: column !important;
+  justify-content: center;
+}
+.navbar .mobile-menu .mobile-menu-wrapper .links-mobile {
+  flex-direction: column !important;
+}
+.navbar .mobile-menu .mobile-menu-wrapper .links-mobile a:hover {
+  box-shadow: none !important;
+  border-radius: 5px;
+}
+.navbar .mobile-menu .mobile-menu-wrapper .link-active {
+  box-shadow: none !important;
+  background-color: #e3e3e3;
+  color: black;
+  border-radius: 5px;
 }
 .navbar .navbar-buttons {
   display: flex;
@@ -294,14 +346,14 @@ body {
 }
 @media screen and (max-width: 550px) {
   .todos-container .todo-list div .single-todo {
-    width: 90% !important;
+    width: 95% !important;
     padding: 0;
   }
 }
 .user-modal,
 .post-modal {
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   left: 0;
   top: 0;
   width: 100%;
@@ -350,33 +402,34 @@ body {
   margin: 0 0 10px 0;
 }
 .user-modal .user-input input[type=text],
-.user-modal .user-input input[type=password],
+.user-modal .user-input input[type=email],
 .user-modal .user-input input[type=number],
 .user-modal .post-input input[type=text],
-.user-modal .post-input input[type=password],
+.user-modal .post-input input[type=email],
 .user-modal .post-input input[type=number],
 .post-modal .user-input input[type=text],
-.post-modal .user-input input[type=password],
+.post-modal .user-input input[type=email],
 .post-modal .user-input input[type=number],
 .post-modal .post-input input[type=text],
-.post-modal .post-input input[type=password],
+.post-modal .post-input input[type=email],
 .post-modal .post-input input[type=number] {
   padding: 15px;
   margin: 5px 0 15px 0;
   border: none;
   background: #f5f5f5;
+  border-radius: 5px;
 }
 .user-modal .user-input input[type=text]:focus,
-.user-modal .user-input input[type=password]:focus,
+.user-modal .user-input input[type=email]:focus,
 .user-modal .user-input input[type=number]:focus,
 .user-modal .post-input input[type=text]:focus,
-.user-modal .post-input input[type=password]:focus,
+.user-modal .post-input input[type=email]:focus,
 .user-modal .post-input input[type=number]:focus,
 .post-modal .user-input input[type=text]:focus,
-.post-modal .user-input input[type=password]:focus,
+.post-modal .user-input input[type=email]:focus,
 .post-modal .user-input input[type=number]:focus,
 .post-modal .post-input input[type=text]:focus,
-.post-modal .post-input input[type=password]:focus,
+.post-modal .post-input input[type=email]:focus,
 .post-modal .post-input input[type=number]:focus {
   background-color: #ddd;
   outline: none;
@@ -466,4 +519,31 @@ body {
 .post-modal .post-input .add-button:active {
   background-color: rgb(2, 105, 2);
   transform: translateY(0);
+}
+
+.error-box {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(180, 2, 2);
+  margin-top: 10px;
+}
+
+.scroll-top-button {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s color;
+  z-index: 3;
+}
+.scroll-top-button:hover {
+  color: #a8a8a8;
 }/*# sourceMappingURL=style.css.map */

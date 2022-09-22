@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import { FixedSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
@@ -19,7 +19,7 @@ const DisplayTodos = () => {
       {loadingTodos && <div className="info-box">Loading Todos...</div>}
       {/* info - display error on screen */}
       {errorTodos && (
-        <div className="info-box">{`There is a problem fetching the data - ${errorTodos}`}</div>
+        <div className="info-box">{`There is a problem fetching the todos - ${errorTodos}`}</div>
       )}
       {fetchTodos && (
         // render list using react-virtualized

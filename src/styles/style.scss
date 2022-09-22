@@ -5,6 +5,9 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #e3e3e3;
 }
+.welcome-box {
+  text-align: center;
+}
 .navbar {
   display: flex;
   flex-flow: row wrap;
@@ -36,6 +39,54 @@ body {
         &::first-letter {
           text-transform: uppercase;
         }
+      }
+    }
+  }
+  .mobile-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 5px;
+    color: white;
+    .mobile-menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      transition: 0.3s color;
+      &:hover {
+        color: #cbcbcb;
+      }
+    }
+    h3 {
+      margin: 0;
+      font-style: italic;
+    }
+    .mobile-menu-wrapper {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      background-color: #646464;
+      width: 100%;
+      z-index: 3;
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 4px solid black;
+      .buttons-mobile {
+        flex-direction: column !important;
+        justify-content: center;
+      }
+      .links-mobile {
+        flex-direction: column !important;
+        a:hover {
+          box-shadow: none !important;
+          border-radius: 5px;
+        }
+      }
+      .link-active {
+        box-shadow: none !important;
+        background-color: #e3e3e3;
+        color: black;
+        border-radius: 5px;
       }
     }
   }
@@ -119,7 +170,7 @@ body {
     background-color: #cecece;
   }
 }
-
+// changes styles on diffrent screen size
 @media screen and (max-width: 850px) {
   .users-table {
     thead {
@@ -298,6 +349,7 @@ body {
     }
   }
 }
+// changes styles on diffrent screen size
 @media screen and (max-width: 850px) {
   .todos-container {
     .todo-list {
@@ -314,7 +366,7 @@ body {
     .todo-list {
       div {
         .single-todo {
-          width: 90% !important;
+          width: 95% !important;
           padding: 0;
         }
       }
@@ -325,7 +377,7 @@ body {
 .user-modal,
 .post-modal {
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   left: 0;
   top: 0;
   width: 100%;
@@ -365,12 +417,13 @@ body {
       margin: 0 0 10px 0;
     }
     input[type="text"],
-    input[type="password"],
+    input[type="email"],
     input[type="number"] {
       padding: 15px;
       margin: 5px 0 15px 0;
       border: none;
       background: #f5f5f5;
+      border-radius: 5px;
       &:focus {
         background-color: #ddd;
         outline: none;
@@ -432,5 +485,31 @@ body {
         transform: translateY(0);
       }
     }
+  }
+}
+.error-box {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(180, 2, 2);
+  margin-top: 10px;
+}
+
+.scroll-top-button {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s color;
+  z-index: 3;
+  &:hover {
+    color: #a8a8a8;
   }
 }

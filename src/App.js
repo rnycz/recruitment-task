@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import AddUser from "./components/AddUser";
 import AddPost from "./components/AddPost";
 import { useStateContext } from "./contexts/ContextProvider";
+import GoTopButon from "./components/GoTopButon";
 
 function App() {
   // use states to manage data
@@ -126,10 +127,16 @@ function App() {
       <div className="App">
         {/* navigation bar */}
         <Navbar />
+
         {/* user modal window */}
         <AddUser />
+
         {/* post modal window */}
         <AddPost />
+
+        {/* button scrolls to top */}
+        <GoTopButon />
+
         {/* declaration of subpage paths */}
         <Routes>
           <Route path="/" element={<WelcomePage />} />

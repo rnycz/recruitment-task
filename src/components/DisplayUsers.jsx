@@ -9,10 +9,10 @@ const DisplayUsers = () => {
     // render component content
     <div className="users-container">
       {/* info - waiting to load users */}
-      {loadingUsers && <div className="info-box">Loading users...</div>}
+      {loadingUsers && <div className="info-box">Loading Users...</div>}
       {/* info - display error on screen */}
       {errorUsers && (
-        <div className="info-box">{`There is a problem fetching the data - ${errorUsers}`}</div>
+        <div className="info-box">{`There is a problem fetching the users - ${errorUsers}`}</div>
       )}
       {fetchUsers && (
         <table className="users-table">
